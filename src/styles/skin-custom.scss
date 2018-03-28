@@ -1,0 +1,162 @@
+$skin-custom-color: #3c8dbc;
+$skin-custom-header-hover-color:#367fa9;
+
+$skin-custom-sidebar-bg-color: #f6f6f6;
+$skin-custom-sidebar-border-right-color:#e2e2e2;
+
+$skin-custom-sidebar-text-color:#555555;
+$skin-custom-sidebar-text-active-color:#ffffff;
+
+$skin-custom-sidebar-treeview-hover-color: #efefef;
+$skin-custom-sidebar-treeview-active-color: #19a2de;
+$skin-custom-sidebar-treeview-active-hover-color: #3fd5c0;
+
+.skin-custom {
+  .main-header {
+    .navbar {
+      background-color: $skin-custom-color;
+      .nav {
+        > li > a {
+          color: #ffffff;
+          &:hover, &:active, &:focus {
+            background: rgba(0, 0, 0, 0.1);
+            color: #f6f6f6;
+          }
+        }
+        .open > a {
+          background: rgba(0, 0, 0, 0.1);
+          color: #f6f6f6;
+          &:hover, &:focus {
+            background: rgba(0, 0, 0, 0.1);
+            color: #f6f6f6;
+          }
+        }
+        > .active > a {
+          background: rgba(0, 0, 0, 0.1);
+          color: #f6f6f6;
+        }
+      }
+      .sidebar-toggle {
+        color: #ffffff;
+        &:hover {
+          color: #f6f6f6;
+          background-color: $skin-custom-header-hover-color;
+        }
+      }
+    }
+    .logo {
+      background-color: $skin-custom-color;
+      color: #ffffff;
+      border-bottom: 0 solid transparent;
+      &:hover {
+        background-color: #3b8ab8;
+      }
+    }
+    li.user-header {
+      background-color: $skin-custom-color;
+    }
+  }
+
+  .content-header {
+    background: transparent;
+  }
+
+  .wrapper, .main-sidebar, .left-side {
+    background-color: $skin-custom-sidebar-bg-color;
+  }
+
+  .main-sidebar {
+    border-right: 1px solid $skin-custom-sidebar-border-right-color;
+  }
+
+  .user-panel > .info {
+    color: $skin-custom-sidebar-text-color;
+    > a {
+      color: $skin-custom-sidebar-text-color;
+    }
+  }
+
+  .sidebar-menu > li {
+    -webkit-transition: border-left-color 0.3s ease;
+    -o-transition: border-left-color 0.3s ease;
+    transition: border-left-color 0.3s ease;
+    &.header {
+      color: $skin-custom-sidebar-text-color;
+      background: $skin-custom-sidebar-bg-color;
+    }
+    > a {
+      color: $skin-custom-sidebar-text-color;
+      border-left: 3px solid transparent;
+      font-weight: 300;
+    }
+    &:hover > a {
+      color: $skin-custom-sidebar-text-color;
+      background: $skin-custom-sidebar-treeview-hover-color;
+    }
+    &.active {
+      > a {
+        color: $skin-custom-sidebar-text-active-color;
+        background: $skin-custom-sidebar-treeview-active-color;
+        font-weight: 600;
+        &:hover{
+          color: $skin-custom-sidebar-text-active-color;
+          background: $skin-custom-sidebar-treeview-active-hover-color;
+        }
+      }
+      border-left-color: $skin-custom-color;
+    }
+    > .treeview-menu {
+      background: $skin-custom-sidebar-bg-color;
+    }
+  }
+  .sidebar a {
+    color: $skin-custom-sidebar-text-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .sidebar-menu .treeview-menu > li {
+    > a {
+      color: $skin-custom-sidebar-text-color;
+    }
+    &.active {
+      > a {
+        font-weight: 600;
+        color: $skin-custom-sidebar-text-color;
+        background-color:$skin-custom-sidebar-treeview-hover-color;
+      }
+    }
+    > a:hover {
+      color: $skin-custom-sidebar-text-color;
+      background-color: $skin-custom-sidebar-treeview-hover-color;
+    }
+    > a.router-link-exact-active.router-link-active {
+      color: $skin-custom-sidebar-text-color;
+      background-color:$skin-custom-sidebar-treeview-hover-color;
+    }
+  }
+
+  .main-footer {
+    border-top-color: #ddd;
+  }
+}
+
+@media (max-width: 767px) {
+  .skin-custom .main-header .navbar .dropdown-menu li {
+    &.divider {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    a {
+      color: #fff;
+      &:hover {
+        background: $skin-custom-header-hover-color;
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .skin-custom.sidebar-mini.sidebar-collapse .sidebar-menu > li > .treeview-menu {
+    border-left: 1px solid #d2d6de;
+  }
+}
