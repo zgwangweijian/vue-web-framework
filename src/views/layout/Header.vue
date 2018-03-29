@@ -90,12 +90,12 @@
         <ul class="nav navbar-nav">
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="./../../assets/avatar2.png" class="user-image" alt="User Image">
+              <img src="./../../assets/img/avatar2.png" class="user-image" alt="User Image">
               <span class="hidden-xs">王伟健</span>
             </a>
             <ul class="dropdown-menu">
               <li class="user-header">
-                <img src="./../../assets/avatar2.png" class="img-circle" alt="User Image">
+                <img src="./../../assets/img/avatar2.png" class="img-circle" alt="User Image">
                 <p>
                   王伟健 - 系统管理员
                 </p>

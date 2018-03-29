@@ -33,15 +33,3 @@
     line-height: $header-height;
   }
 }
-
-.content-header {
-  position: relative;
-  padding: 12px + $header-height 15px 12px 15px;
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
-}
-
-@media (max-width: 767px){
-  .content-header {
-    padding: 12px + $header-height * 2 15px 12px 15px;
-  }
-}
