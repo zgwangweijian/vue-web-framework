@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       form: {
-        userName: 'iview_admin',
+        userName: 'wangwj',
         password: ''
       },
       rules: {
