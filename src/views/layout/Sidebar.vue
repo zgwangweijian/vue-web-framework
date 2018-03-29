@@ -9,13 +9,16 @@
           <div class="info">
             <p>上午好, 王伟健</p>
             <div>
-              <a href="#"><i class="ti-panel"></i>
+              <a href="#">
+                <Icon type="ios-settings-strong"></Icon>
                 <small>设置</small>
               </a>
-              <a href="#"><i class="ti-user"></i>
+              <a href="#">
+                <Icon type="person"></Icon>
                 <small>配置文件</small>
               </a>
-              <a href="#"><i class="ti-power-off"></i>
+              <a href="#">
+                <Icon type="power"></Icon>
                 <small>注销</small>
               </a>
             </div>
@@ -25,7 +28,7 @@
         <ul class="sidebar-menu" data-widget="tree">
           <li class="treeview">
             <a href="#">
-              <i class="ti-layout-media-overlay"></i>
+              <i class="fas fa-table"></i>
               <span>示例</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -34,13 +37,13 @@
             <ul class="treeview-menu">
               <li>
                 <router-link to="/group/page1">
-                  <i class="ti-layout-media-overlay"></i>
+                  <i class="fas fa-table"></i>
                   页面1
                 </router-link>
               </li>
               <li>
                 <router-link to="/group/page2">
-                  <i class="ti-layout-media-overlay"></i>
+                  <i class="fas fa-table"></i>
                   页面2
                 </router-link>
               </li>
@@ -48,14 +51,14 @@
           </li>
           <li class="treeview">
             <a href="#">
-              <i class="ti-layout-media-overlay"></i>
+              <i class="fas fa-table"></i>
               <span>表格示例</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active">
+              <li>
                 <router-link to="/home">
                   <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
                   基础表格
