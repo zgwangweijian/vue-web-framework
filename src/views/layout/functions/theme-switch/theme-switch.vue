@@ -55,14 +55,6 @@ export default {
           body: '#f4f5f7'
         },
         {
-          name: 'Black',
-          key: 'skin-black',
-          logo: '#fefefe',
-          head: '#fefefe',
-          menu: '#222d32',
-          body: '#f4f5f7'
-        },
-        {
           name: 'Purple',
           key: 'skin-purple',
           logo: '#555299',
@@ -99,14 +91,6 @@ export default {
           key: 'skin-blue-light',
           logo: '#367fa9',
           head: '#3c8dbc',
-          menu: '#f9fafc',
-          body: '#f4f5f7'
-        },
-        {
-          name: 'Black Light',
-          key: 'skin-black-light',
-          logo: '#fefefe',
-          head: '#fefefe',
           menu: '#f9fafc',
           body: '#f4f5f7'
         },
