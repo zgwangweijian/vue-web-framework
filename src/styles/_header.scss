@@ -12,6 +12,33 @@
       border-right: 0 !important;
       padding: 15px + ($header-height - $old-header-height)/2px 15px;
     }
+    .function-area{
+      width: 150px;
+      .lock-screen-btn-con {
+        float: left;
+        display: block;
+        width: 40px;
+        padding: 21.5px 0;
+        text-align: center;
+        cursor: pointer;
+      }
+      .theme-switch-btn-con {
+        float: left;
+        display: block;
+        width: 40px;
+        padding: 21.5px 0;
+        text-align: center;
+        cursor: pointer;
+      }
+      .lang-switch-btn-con {
+        float: left;
+        display: block;
+        width: 40px;
+        padding: 21.5px 0;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
   }
   .sidebar-toggle {
     padding: 15px + ($header-height - $old-header-height - ($header-height - $old-header-height) * 8/15 + 1)/2px 15px + ($header-height - $old-header-height)/2px;
@@ -23,6 +50,9 @@
     &:focus,
     &:active {
       background: transparent;
+    }
+    &:before {
+      content: " ";
     }
     .icon-bar {
       display: none;
