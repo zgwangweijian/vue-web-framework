@@ -4,7 +4,7 @@
       <section class="sidebar">
         <div class="user-panel">
           <div class="image">
-            <img src="./../../assets/avatar2.png" alt="User Image" class="img-circle">
+            <img src="./../../assets/img/avatar2.png" alt="User Image" class="img-circle">
           </div>
           <div class="info">
             <p>上午好, 王伟健</p>
@@ -20,7 +20,7 @@
               </a>
             </div>
           </div>
-          <img src="./../../assets/avatar-bg.png" alt="User Image" class="bg-user">
+          <img src="./../../assets/img/avatar-bg.png" alt="User Image" class="bg-user">
         </div>
         <ul class="sidebar-menu" data-widget="tree">
           <li class="active treeview">
