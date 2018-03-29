@@ -1,28 +1,28 @@
-@keyframes error500animation {
+@keyframes error404animation {
     0% {
         transform: rotateZ(0deg);
     }
     20% {
-        transform: rotateZ(-10deg);
+        transform: rotateZ(-60deg);
     }
     40% {
-        transform: rotateZ(5deg);
+        transform: rotateZ(-10deg);
     }
     60% {
-        transform: rotateZ(-5deg);
+        transform: rotateZ(50deg);
     }
     80% {
-        transform: rotateZ(10deg);
+        transform: rotateZ(-20deg);
     }
     100% {
         transform: rotateZ(0deg);
     }
 }
-.error500{
+.error404{
     &-body-con{
         width: 700px;
         height: 500px;
-        position: absolute;
+        position: fixed;
         left: 50%;
         top: 50%;
         transform: translate(-50%,-50%);
@@ -34,24 +34,11 @@
             height: 260px;
             line-height: 260px;
             margin-top: 40px;
-            .error500-0-span{
+            span{
                 display: inline-block;
-                position: relative;
-                width: 170px;
-                height: 170px;
-                border-radius: 50%;
-                border: 20px solid #ed3f14;
-                color: #ed3f14;
-                margin-right: 10px;
-                i{
-                    display: inline-block;
-                    font-size: 120px;
-                    position: absolute;
-                    bottom: -10px;
-                    left: 10px;
-                    transform-origin: center bottom;
-                    animation: error500animation 3s ease 0s infinite alternate;
-                }
+                color: #19be6b;
+                font-size: 230px;
+                animation: error404animation 3s ease 0s infinite alternate;
             }
         }
         &-message{
@@ -59,7 +46,7 @@
             text-align: center;
             font-size: 30px;
             font-weight: 500;
-            letter-spacing: 4px;
+            letter-spacing: 12px;
             color: #dddde2;
         }
     }
@@ -68,4 +55,20 @@
         padding: 20px 0;
         margin-bottom: 40px;
     }
+}
+@media (max-width: 767px) {
+  .error404 {
+    &-body-con{
+      width: 100%;
+      &-title {
+        font-size: 140px;
+        span {
+          font-size: 140px;
+        }
+      }
+      &-message {
+        font-size: 14px;
+      }
+    }
+  }
 }

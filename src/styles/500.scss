@@ -1,27 +1,24 @@
-@keyframes error403animation {
+@keyframes error500animation {
     0% {
         transform: rotateZ(0deg);
     }
+    20% {
+        transform: rotateZ(-10deg);
+    }
     40% {
-        transform: rotateZ(-20deg);
-    }
-    45% {
-        transform: rotateZ(-15deg);
-    }
-    50% {
-        transform: rotateZ(-20deg);
-    }
-    55% {
-        transform: rotateZ(-15deg);
+        transform: rotateZ(5deg);
     }
     60% {
-        transform: rotateZ(-20deg);
+        transform: rotateZ(-5deg);
+    }
+    80% {
+        transform: rotateZ(10deg);
     }
     100% {
         transform: rotateZ(0deg);
     }
 }
-.error403{
+.error500{
     &-body-con{
         width: 700px;
         height: 500px;
@@ -37,7 +34,7 @@
             height: 260px;
             line-height: 260px;
             margin-top: 40px;
-            .error403-0-span{
+            .error500-0-span{
                 display: inline-block;
                 position: relative;
                 width: 170px;
@@ -50,26 +47,10 @@
                     display: inline-block;
                     font-size: 120px;
                     position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%,-50%);
-                }
-            }
-            .error403-key-span{
-                display: inline-block;
-                position: relative;
-                width: 100px;
-                height: 190px;
-                border-radius: 50%;
-                margin-right: 10px;
-                i{
-                    display: inline-block;
-                    font-size: 190px;
-                    position: absolute;
-                    left: 20px;
-                    transform: translate(-50%,-60%);
+                    bottom: -10px;
+                    left: 10px;
                     transform-origin: center bottom;
-                    animation: error403animation 2.8s ease 0s infinite;
+                    animation: error500animation 3s ease 0s infinite alternate;
                 }
             }
         }
@@ -87,4 +68,27 @@
         padding: 20px 0;
         margin-bottom: 40px;
     }
+}
+@media (max-width: 767px) {
+  .error500 {
+    &-body-con{
+      width: 100%;
+      &-title {
+        font-size: 140px;
+        .error500-0-span {
+          width: 100px;
+          height: 100px;
+          margin: 0;
+          i {
+            font-size: 55px;
+            bottom: -5px;
+            left: 5px;
+          }
+        }
+      }
+      &-message {
+        font-size: 14px;
+      }
+    }
+  }
 }
