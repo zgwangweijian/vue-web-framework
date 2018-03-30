@@ -5,7 +5,7 @@
     <app-sidebar></app-sidebar>
 
     <div class="content-wrapper">
-      <app-content-header></app-content-header>
+      <app-content-header :pageTagsList="pageTagsList"></app-content-header>
       <section class="content">
         <router-view></router-view>
       </section>
@@ -19,6 +19,7 @@ import Sidebar from './layout/Sidebar.vue'
 import Header from './layout/Header.vue'
 import Footer from './layout/Footer.vue'
 import ContentHeader from './layout/ContentHeader.vue'
+import util from '../libs/util'
 
 export default {
   name: 'Content',
@@ -27,6 +28,23 @@ export default {
     'app-header': Header,
     'app-footer': Footer,
     'app-content-header': ContentHeader
+  },
+  computed: {
+    pageTagsList () {
+      return this.$store.state.app.pageOpenedList // 打开的页面的页面对象
+    }
+  },
+  methods: {
+    checkTag (name) {
+      let openpageHasTag = this.pageTagsList.some(item => {
+        if (item.name === name) {
+          return true
+        }
+      })
+      if (!openpageHasTag) { //  解决关闭当前标签后再点击回退按钮会退到当前页时没有标签的问题
+        util.openNewPage(this, name, this.$route.params || {}, this.$route.query || {})
+      }
+    }
   }
 }
 </script>

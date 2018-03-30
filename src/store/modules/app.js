@@ -6,7 +6,7 @@ import Vue from 'vue'
 const app = {
   state: {
     cachePage: [],
-    lang: '',
+    lang: localStorage.getItem('lang'),
     openedSubmenuArr: [], // 要展开的菜单数组
     themeName: 'skin-custom', // 主题
     sidebarStatus: !localStorage.getItem('sidebar-status') ? 'expand' : localStorage.getItem('sidebar-status'),
@@ -38,6 +38,10 @@ const app = {
     recordSidebarStatus (state, sidebarStatus) {
       state.sidebarStatus = sidebarStatus
       localStorage.setItem('sidebar-status', sidebarStatus)
+    },
+    switchLang (state, lang) {
+      state.lang = lang
+      Vue.config.lang = lang
     },
     setTagsList (state, list) {
       state.tagsList.push(...list)
@@ -171,10 +175,6 @@ const app = {
     },
     setAvator (state, path) {
       localStorage.avatorImgPath = path
-    },
-    switchLang (state, lang) {
-      state.lang = lang
-      Vue.config.lang = lang
     },
     clearOpenedSubmenu (state) {
       state.openedSubmenuArr.length = 0

@@ -2,9 +2,7 @@
   <div class="theme-switch-btn-con">
     <Dropdown trigger="click" @on-click="setTheme">
       <a href="javascript:void(0)">
-        <Icon :style="{marginTop: '-2px', verticalAlign: 'middle'}" color="#495060" :size="18"
-              type="paintbucket"></Icon>
-        <Icon type="arrow-down-b"></Icon>
+        <i class="fas fa-desktop"></i>
       </a>
       <DropdownMenu slot="list">
         <DropdownItem v-for="(item, index) in themeList" :key="index" :name="item.key">
@@ -160,24 +158,6 @@ export default {
       }
 
       this.$store.commit('changeTheme', theme)
-    }
-  },
-  created () {
-    let name = Cookies.get('user')
-    if (localStorage.theme) {
-      let hasThisUser = JSON.parse(localStorage.theme).some(item => {
-        if (item.userName === name) {
-          this.$store.commit('changeTheme', item.themeName)
-          return true
-        } else {
-          return false
-        }
-      })
-      if (!hasThisUser) {
-        this.$store.commit('changeTheme', 'skin-custom')
-      }
-    } else {
-      this.$store.commit('changeTheme', 'skin-custom')
     }
   }
 }

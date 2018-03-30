@@ -19,16 +19,14 @@ Vue.config.lang = lang
 // 多语言配置
 const locales = Locales
 const messages = {
-  en: Object.assign(en, locales['en-US']),
-  zh: Object.assign(zh, locales['zh-CN'])
+  'en-US': Object.assign(en, locales['en-US']),
+  'zh-CN': Object.assign(zh, locales['zh-CN'])
 }
 
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-  locale: 'zh',
+  locale: Vue.config.lang,
   messages
 })
-
-new Vue({i18n}).$mount('#app')
 
 export default i18n

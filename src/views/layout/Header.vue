@@ -21,14 +21,6 @@
     color: #fff;
     transition: color .2s ease-in-out;
   }
-
-  .main-header .header-avator-con {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: 300px;
-  }
 </style>
 <template>
   <header class="main-header">
@@ -44,7 +36,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <div class="pull-left">
+      <div class="breadcrumb-area">
         <div class="header-middle-con">
           <div class="main-breadcrumb">
             <div class="ivu-breadcrumb">
@@ -94,6 +86,7 @@
         <div class="function-area">
           <lock-screen></lock-screen>
           <theme-switch></theme-switch>
+          <language-switch></language-switch>
         </div>
       </div>
     </nav>
@@ -102,12 +95,14 @@
 <script>
 import lockScreen from './functions/lockscreen/lockscreen.vue'
 import themeSwitch from './functions/theme-switch/theme-switch.vue'
+import languageSwitch from './functions/language-switch/language-switch.vue'
 
 export default {
   name: 'ContentHeader',
   components: {
     lockScreen,
-    themeSwitch
+    themeSwitch,
+    languageSwitch
   },
   methods: {
     recordSidebarStatus: function () {

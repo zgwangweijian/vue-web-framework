@@ -3,7 +3,7 @@
   margin-top: $header-height + 50px;
   .content-header {
     position: fixed;
-    padding: 12px 15px 12px 15px;
+    padding: 0;
     left: $sidebar-width;
     right: 0;
     top: $header-height;
@@ -13,6 +13,33 @@
     transition: left .3s ease-in-out,-webkit-transform .3s ease-in-out;
     transition: transform .3s ease-in-out,left .3s ease-in-out;
     transition: transform .3s ease-in-out,left .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    .tags-outer-scroll-con{
+      position: relative;
+      box-sizing: border-box;
+      padding-right: 120px;
+      width: 100%;
+      height: 50px;
+      .tags-inner-scroll-body{
+        position: absolute;
+        padding: 5px 10px;
+        overflow: visible;
+        white-space: nowrap;
+        transition: left .3s ease;
+      }
+      .close-all-tag-con{
+        position: absolute;
+        right: 0;
+        top: 0;
+        box-sizing: border-box;
+        padding-top: 13px;
+        text-align: center;
+        width: 110px;
+        height: 100%;
+        background: white;
+        box-shadow: -3px 0 15px 3px rgba(0, 0, 0, .1);
+        z-index: 10;
+      }
+    }
   }
   .content {
     position: fixed;
