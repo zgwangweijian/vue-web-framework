@@ -142,6 +142,11 @@ $skin-custom-sidebar-treeview-active-hover-color: #3fd5c0;
 }
 
 @media (max-width: 767px) {
+  .sidebar-mini>div {
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+  }
   .skin-custom .main-header .navbar .dropdown-menu li {
     &.divider {
       background-color: rgba(255, 255, 255, 0.1);

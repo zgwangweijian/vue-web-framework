@@ -143,6 +143,7 @@
 @media (max-width: 767px){
   .main-sidebar {
     padding-top: $header-height * 2;
+    position: absolute;
   }
   .sidebar-collapse .user-panel {
     width: $sidebar-width!important;

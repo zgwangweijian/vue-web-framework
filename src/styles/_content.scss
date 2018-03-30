@@ -105,7 +105,8 @@
     }
     .content {
       left: 0;
-      top: $header-height * 2;
+      top: 0;
+      position: relative;
     }
   }
 }

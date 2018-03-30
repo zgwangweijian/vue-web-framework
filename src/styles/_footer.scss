@@ -4,3 +4,9 @@
   left: 0;
   right: 0;
 }
+@media (max-width: 767px){
+  .main-footer {
+    position: relative;
+    bottom: 0;
+  }
+}

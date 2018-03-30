@@ -65,6 +65,8 @@
 
 @media (max-width: 767px){
   .main-header {
+    position: absolute;
+    top: 0;
     .navbar{
       .breadcrumb-area{
         display: none;
