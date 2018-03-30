@@ -25,7 +25,7 @@ Vue.use(iView)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  i18n,
+  i18n: i18n,
   router: router,
   store: store,
   render: h => h(App),
