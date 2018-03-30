@@ -159,24 +159,6 @@ export default {
 
       this.$store.commit('changeTheme', theme)
     }
-  },
-  created () {
-    let name = Cookies.get('user')
-    if (localStorage.theme) {
-      let hasThisUser = JSON.parse(localStorage.theme).some(item => {
-        if (item.userName === name) {
-          this.$store.commit('changeTheme', item.themeName)
-          return true
-        } else {
-          return false
-        }
-      })
-      if (!hasThisUser) {
-        this.$store.commit('changeTheme', 'skin-custom')
-      }
-    } else {
-      this.$store.commit('changeTheme', 'skin-custom')
-    }
   }
 }
 </script>
