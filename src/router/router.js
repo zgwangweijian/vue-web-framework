@@ -14,7 +14,7 @@ export const locking = {
   path: '/locking',
   name: 'locking',
   meta: {
-    title: '锁定'
+    title: 'locking-页面已锁定'
   },
   component: resolve => { require(['@/views/layout/functions/lockscreen/components/locking-page.vue'], resolve) }
 }
