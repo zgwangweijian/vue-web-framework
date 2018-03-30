@@ -8,6 +8,7 @@
     padding: 10px;
     overflow: hidden;
   }
+
   .main-breadcrumb {
     padding: 12px 15px;
   }
@@ -40,16 +41,8 @@
         <div class="header-middle-con">
           <div class="main-breadcrumb">
             <div class="ivu-breadcrumb">
-              <span>
-                <a class="ivu-breadcrumb-item-link">首页</a>
-                <span class="ivu-breadcrumb-item-separator">/</span>
-              </span>
-              <span>
-                <span class="ivu-breadcrumb-item-link">组件</span>
-                <span class="ivu-breadcrumb-item-separator">/</span>
-              </span>
-              <span>
-                <a class="ivu-breadcrumb-item-link">Markdown编辑器</a>
+              <span v-for="(breadcrumb, index) in breadcrumbList" :key="index">
+                <a @click="jumpPage(breadcrumb.name)" class="ivu-breadcrumb-item-link">{{ breadcrumb.title }}</a>
                 <span class="ivu-breadcrumb-item-separator">/</span>
               </span>
             </div>
@@ -104,6 +97,11 @@ export default {
     themeSwitch,
     languageSwitch
   },
+  computed: {
+    breadcrumbList: function () {
+      return this.$store.state.app.currentPath
+    }
+  },
   methods: {
     recordSidebarStatus: function () {
       if (this.$store.state.app.sidebarStatus === 'expand') {
@@ -111,6 +109,9 @@ export default {
       } else {
         this.$store.commit('recordSidebarStatus', 'expand')
       }
+    },
+    jumpPage: function (routerName) {
+      this.$router.push({name: routerName})
     }
   }
 }
