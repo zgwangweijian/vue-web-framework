@@ -8,6 +8,11 @@
     right: 0;
     top: $header-height;
     box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+    -webkit-transition: -webkit-transform .3s ease-in-out,left .3s ease-in-out;
+    -webkit-transition: left .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    transition: left .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out,left .3s ease-in-out;
+    transition: transform .3s ease-in-out,left .3s ease-in-out,-webkit-transform .3s ease-in-out;
   }
   .content {
     position: fixed;
@@ -16,6 +21,11 @@
     top: $header-height + 50px;
     bottom: 50px;
     overflow-y: auto;
+    -webkit-transition: -webkit-transform .3s ease-in-out,left .3s ease-in-out;
+    -webkit-transition: left .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    transition: left .3s ease-in-out,-webkit-transform .3s ease-in-out;
+    transition: transform .3s ease-in-out,left .3s ease-in-out;
+    transition: transform .3s ease-in-out,left .3s ease-in-out,-webkit-transform .3s ease-in-out;
     &::-webkit-scrollbar{
       width: 6px;
       height: 6px;
@@ -49,6 +59,18 @@
 }
 
 @media (max-width: 767px) {
+  .sidebar-collapse .content-wrapper .content {
+    left: 0;
+  }
+  .sidebar-open {
+    .content-wrapper {
+      -webkit-transform: inherit;
+      transform: inherit;
+      .content {
+        left: $sidebar-width;
+      }
+    }
+  }
   .content-wrapper{
     margin-top: $header-height * 2;
     .content-header {
