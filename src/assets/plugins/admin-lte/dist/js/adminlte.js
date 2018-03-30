@@ -137,7 +137,6 @@ throw new Error('AdminLTE requires jQuery')
 
 }(jQuery);
 
-
 /* BoxWidget()
  * ======
  * Adds box widget functions to boxes.
@@ -305,74 +304,6 @@ throw new Error('AdminLTE requires jQuery')
     });
   });
 }(jQuery);
-
-/* DirectChat()
- * ===============
- * Toggles the state of the control sidebar
- *
- * @Usage: $('#my-chat-box').directChat()
- *         or add [data-widget="direct-chat"] to the trigger
- */
-+function ($) {
-  'use strict';
-
-  var DataKey = 'lte.directchat';
-
-  var Selector = {
-    data: '[data-widget="chat-pane-toggle"]',
-    box : '.direct-chat'
-  };
-
-  var ClassName = {
-    open: 'direct-chat-contacts-open'
-  };
-
-  // DirectChat Class Definition
-  // ===========================
-  var DirectChat = function (element) {
-    this.element = element;
-  };
-
-  DirectChat.prototype.toggle = function ($trigger) {
-    $trigger.parents(Selector.box).first().toggleClass(ClassName.open);
-  };
-
-  // Plugin Definition
-  // =================
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this);
-      var data  = $this.data(DataKey);
-
-      if (!data) {
-        $this.data(DataKey, (data = new DirectChat($this)));
-      }
-
-      if (typeof option == 'string') data.toggle($this);
-    });
-  }
-
-  var old = $.fn.directChat;
-
-  $.fn.directChat             = Plugin;
-  $.fn.directChat.Constructor = DirectChat;
-
-  // No Conflict Mode
-  // ================
-  $.fn.directChat.noConflict = function () {
-    $.fn.directChat = old;
-    return this;
-  };
-
-  // DirectChat Data API
-  // ===================
-  $(document).on('click', Selector.data, function (event) {
-    if (event) event.preventDefault();
-    Plugin.call($(this), 'toggle');
-  });
-
-}(jQuery);
-
 
 /* Layout()
  * ========
@@ -542,7 +473,6 @@ throw new Error('AdminLTE requires jQuery')
     Plugin.call($('body'));
   });
 }(jQuery);
-
 
 /* PushMenu()
  * ==========
@@ -721,117 +651,6 @@ throw new Error('AdminLTE requires jQuery')
   });
 }(jQuery);
 
-
-/* TodoList()
- * =========
- * Converts a list into a todoList.
- *
- * @Usage: $('.my-list').todoList(options)
- *         or add [data-widget="todo-list"] to the ul element
- *         Pass any option as data-option="value"
- */
-+function ($) {
-  'use strict';
-
-  var DataKey = 'lte.todolist';
-
-  var Default = {
-    onCheck  : function (item) {
-      return item;
-    },
-    onUnCheck: function (item) {
-      return item;
-    }
-  };
-
-  var Selector = {
-    data: '[data-widget="todo-list"]'
-  };
-
-  var ClassName = {
-    done: 'done'
-  };
-
-  // TodoList Class Definition
-  // =========================
-  var TodoList = function (element, options) {
-    this.element = element;
-    this.options = options;
-
-    this._setUpListeners();
-  };
-
-  TodoList.prototype.toggle = function (item) {
-    item.parents(Selector.li).first().toggleClass(ClassName.done);
-    if (!item.prop('checked')) {
-      this.unCheck(item);
-      return;
-    }
-
-    this.check(item);
-  };
-
-  TodoList.prototype.check = function (item) {
-    this.options.onCheck.call(item);
-  };
-
-  TodoList.prototype.unCheck = function (item) {
-    this.options.onUnCheck.call(item);
-  };
-
-  // Private
-
-  TodoList.prototype._setUpListeners = function () {
-    var that = this;
-    $(this.element).on('change ifChanged', 'input:checkbox', function () {
-      that.toggle($(this));
-    });
-  };
-
-  // Plugin Definition
-  // =================
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this);
-      var data  = $this.data(DataKey);
-
-      if (!data) {
-        var options = $.extend({}, Default, $this.data(), typeof option == 'object' && option);
-        $this.data(DataKey, (data = new TodoList($this, options)));
-      }
-
-      if (typeof data == 'string') {
-        if (typeof data[option] == 'undefined') {
-          throw new Error('No method named ' + option);
-        }
-        data[option]();
-      }
-    });
-  }
-
-  var old = $.fn.todoList;
-
-  $.fn.todoList             = Plugin;
-  $.fn.todoList.Constructor = TodoList;
-
-  // No Conflict Mode
-  // ================
-  $.fn.todoList.noConflict = function () {
-    $.fn.todoList = old;
-    return this;
-  };
-
-  // TodoList Data API
-  // =================
-  $(window).on('load', function () {
-    $(Selector.data).each(function () {
-      Plugin.call($(this));
-    });
-  });
-
-}(jQuery);
-
-
 /* Tree()
  * ======
  * Converts a nested list into a multilevel
@@ -967,13 +786,5 @@ throw new Error('AdminLTE requires jQuery')
     $.fn.tree = old;
     return this;
   };
-
-  // Tree Data API
-  // =============
-  $(window).on('load', function () {
-    $(Selector.data).each(function () {
-      Plugin.call($(this));
-    });
-  });
 
 }(jQuery);

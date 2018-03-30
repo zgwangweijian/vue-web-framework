@@ -83,6 +83,13 @@ import $ from 'jquery'
 
 export default {
   name: 'ContentSidebar',
+  created: function () {
+    $(document).ready(function ($) {
+      $("[data-widget='tree']").each(function () {
+        $.fn.tree.call($(this))
+      })
+    })
+  },
   mounted: function () {
     $(document).ready(function ($) {
       $('.main-sidebar > div').slimScroll({

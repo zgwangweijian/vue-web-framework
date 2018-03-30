@@ -24,7 +24,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
     //app: './src/main.js'
-    app: ["babel-polyfill","./src/main.js"]
+    app: ['babel-polyfill', './src/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -71,7 +71,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"]
+        loaders: ['style', 'css', 'sass']
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
@@ -97,9 +97,9 @@ module.exports = {
   },
   plugins: [
     new webpack.ProvidePlugin({
-      $:'jquery',
-      jQuery:'jquery',
-      'window.jQuery':'jquery'
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     })
   ]
 }
