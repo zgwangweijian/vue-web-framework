@@ -55,6 +55,9 @@ export default {
   },
   methods: {
     validator () {
+      if (Cookies.get('password') !== this.password) {
+        return false
+      }
       return true // 你可以在这里写密码验证方式，如发起ajax请求将用户输入的密码this.password与数据库用户密码对比
     },
     handleClickAvator () {
@@ -70,7 +73,7 @@ export default {
         Cookies.set('locking', '0')
         this.$emit('on-unlock')
       } else {
-        this.$Message.error('密码错误,请重新输入。如果忘了密码，清除浏览器缓存重新登录即可，这里没有做后端验证')
+        this.$Message.error('密码错误,请重新输入。')
       }
     },
     unlockMousedown () {

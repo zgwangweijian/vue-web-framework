@@ -10,6 +10,13 @@
 import unlock from './unlock.vue'
 import Cookies from 'js-cookie'
 
+const setLockBackSize = () => {
+  let x = document.body.clientWidth
+  let y = document.body.clientHeight
+  let r = Math.sqrt(x * x + y * y)
+  return parseInt(r)
+}
+
 export default {
   components: {
     unlock
@@ -39,7 +46,17 @@ export default {
       document.body.appendChild(lockdiv)
     }
     let lockScreenBack = document.getElementById('lock_screen_back')
+    window.addEventListener('resize', () => {
+      let size = setLockBackSize()
+      this.lockScreenSize = size
+      lockScreenBack.style.transition = 'all 0s'
+      lockScreenBack.style.boxShadow = '0 0 0 ' + this.lockScreenSize + 'px #667aa6 inset'
+      lockScreenBack.style.width = lockScreenBack.style.height = size + 'px'
+    })
     lockScreenBack.style.zIndex = -1
+    lockScreenBack.style.transition = 'all 0s'
+    lockScreenBack.style.boxShadow = '0 0 0 ' + setLockBackSize() + 'px #667aa6 inset'
+    lockScreenBack.style.width = lockScreenBack.style.height = setLockBackSize() + 'px'
   }
 }
 </script>
