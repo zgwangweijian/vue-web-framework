@@ -39,6 +39,10 @@ const app = {
       state.sidebarStatus = sidebarStatus
       localStorage.setItem('sidebar-status', sidebarStatus)
     },
+    switchLang (state, lang) {
+      state.lang = lang
+      Vue.config.lang = lang
+    },
     setTagsList (state, list) {
       state.tagsList.push(...list)
     },
@@ -171,10 +175,6 @@ const app = {
     },
     setAvator (state, path) {
       localStorage.avatorImgPath = path
-    },
-    switchLang (state, lang) {
-      state.lang = lang
-      Vue.config.lang = lang
     },
     clearOpenedSubmenu (state) {
       state.openedSubmenuArr.length = 0
