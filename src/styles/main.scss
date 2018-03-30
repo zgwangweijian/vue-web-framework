@@ -1,16 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,300,400,400i,700,900');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css');
-@import url('https://cdn.jsdelivr.net/themify-icons/0.1.2/css/themify-icons.css');
+@import "./../../static/fontawesome/css/fontawesome-all.min.css";
 
 @import "base";
 @import "variables";
 @import "header";
 @import "sidebar";
+@import "content";
 @import "footer";
-
-@import "403";
-@import "404";
-@import "500";
 
 @import "skin-custom";
 

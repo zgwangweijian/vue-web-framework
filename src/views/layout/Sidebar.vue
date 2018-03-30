@@ -4,28 +4,31 @@
       <section class="sidebar">
         <div class="user-panel">
           <div class="image">
-            <img src="./../../assets/avatar2.png" alt="User Image" class="img-circle">
+            <img src="./../../assets/img/avatar2.png" alt="User Image" class="img-circle">
           </div>
           <div class="info">
             <p>上午好, 王伟健</p>
             <div>
-              <a href="#"><i class="ti-panel"></i>
+              <a href="#">
+                <Icon type="ios-settings-strong"></Icon>
                 <small>设置</small>
               </a>
-              <a href="#"><i class="ti-user"></i>
+              <a href="#">
+                <Icon type="person"></Icon>
                 <small>配置文件</small>
               </a>
-              <a href="#"><i class="ti-power-off"></i>
+              <a href="#">
+                <Icon type="power"></Icon>
                 <small>注销</small>
               </a>
             </div>
           </div>
-          <img src="./../../assets/avatar-bg.png" alt="User Image" class="bg-user">
+          <img src="./../../assets/img/avatar-bg.png" alt="User Image" class="bg-user">
         </div>
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="active treeview">
+          <li class="treeview">
             <a href="#">
-              <i class="ti-layout-media-overlay"></i>
+              <i class="fas fa-table"></i>
               <span>示例</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -34,13 +37,13 @@
             <ul class="treeview-menu">
               <li>
                 <router-link to="/group/page1">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
+                  <i class="fas fa-table"></i>
                   页面1
                 </router-link>
               </li>
               <li>
                 <router-link to="/group/page2">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
+                  <i class="fas fa-table"></i>
                   页面2
                 </router-link>
               </li>
@@ -48,375 +51,15 @@
           </li>
           <li class="treeview">
             <a href="#">
-              <i class="ti-layout-media-overlay"></i>
+              <i class="fas fa-table"></i>
               <span>表格示例</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
             </span>
             </a>
             <ul class="treeview-menu">
-              <li class="active">
+              <li>
                 <router-link to="/home">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fa fa-files-o"></i>
-              <span>系统管理</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li><a href="pages/layout/top-nav.html"><i class="fa fa-building"></i> 菜单管理</a></li>
-              <li><a href="pages/layout/boxed.html"><i class="fa fa-building"></i> 应用管理</a></li>
-              <li><a href="pages/layout/fixed.html"><i class="fa fa-building"></i> 应用管理</a></li>
-              <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-building"></i> 应用管理</a></li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="ti-layout-media-overlay"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li class="active">
-                <router-link to="/table/simple">
                   <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
                   基础表格
                 </router-link>

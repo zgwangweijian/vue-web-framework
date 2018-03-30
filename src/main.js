@@ -7,14 +7,14 @@ import store from './store'
 import i18n from './locale'
 
 import 'bootstrap/dist/css/bootstrap.css'
-import 'admin-lte/dist/css/AdminLTE.min.css'
-import 'admin-lte/dist/css/skins/_all-skins.min.css'
+import './assets/plugins/admin-lte/dist/css/AdminLTE.min.css'
+import './assets/plugins/admin-lte/dist/css/skins/_all-skins.min.css'
 import 'iview/dist/styles/iview.css'
 
 import App from './App.vue'
 
 import 'bootstrap/dist/js/bootstrap.min'
-import 'admin-lte/dist/js/adminlte.min'
+import './assets/plugins/admin-lte/dist/js/adminlte'
 import 'jquery-slimscroll/jquery.slimscroll.min'
 
 Vue.config.productionTip = false
