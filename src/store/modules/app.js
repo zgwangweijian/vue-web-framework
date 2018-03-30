@@ -6,7 +6,7 @@ import Vue from 'vue'
 const app = {
   state: {
     cachePage: [],
-    lang: '',
+    lang: !localStorage.getItem('lang') ? 'zh-CN' : localStorage.getItem('lang'),
     openedSubmenuArr: [], // 要展开的菜单数组
     themeName: 'skin-custom', // 主题
     sidebarStatus: !localStorage.getItem('sidebar-status') ? 'expand' : localStorage.getItem('sidebar-status'),
