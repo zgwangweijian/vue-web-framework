@@ -10,6 +10,15 @@ export const loginRouter = {
   component: resolve => { require(['@/views/Login.vue'], resolve) }
 }
 
+export const locking = {
+  path: '/locking',
+  name: 'locking',
+  meta: {
+    title: '锁定'
+  },
+  component: resolve => { require(['@/views/layout/functions/lockscreen/components/locking-page.vue'], resolve) }
+}
+
 export const page404 = {
   path: '/*',
   name: 'error-404',
@@ -82,6 +91,7 @@ export const appRouter = [
 // 所有上面定义的路由都要写在下面的routers里
 export const routers = [
   loginRouter,
+  locking,
   otherRouter,
   ...appRouter,
   page500,
