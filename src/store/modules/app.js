@@ -9,7 +9,7 @@ const app = {
     lang: '',
     openedSubmenuArr: [], // 要展开的菜单数组
     themeName: 'skin-custom', // 主题
-    sidebarStatus: 'expand',
+    sidebarStatus: !localStorage.getItem('sidebar-status') ? 'expand' : localStorage.getItem('sidebar-status'),
     pageOpenedList: [{
       title: '首页',
       path: '',
@@ -37,6 +37,7 @@ const app = {
     },
     recordSidebarStatus (state, sidebarStatus) {
       state.sidebarStatus = sidebarStatus
+      localStorage.setItem('sidebar-status', sidebarStatus)
     },
     setTagsList (state, list) {
       state.tagsList.push(...list)
