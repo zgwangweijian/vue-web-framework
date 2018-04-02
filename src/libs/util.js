@@ -4,6 +4,24 @@ util.title = function (title) {
   window.document.title = title
 }
 
+util.inOf = function (arr, targetArr) {
+  let res = true
+  arr.forEach(item => {
+    if (targetArr.indexOf(item) < 0) {
+      res = false
+    }
+  })
+  return res
+}
+
+util.oneOf = function (ele, targetArr) {
+  if (targetArr.indexOf(ele) >= 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
 util.getRouterObjByName = function (routers, name) {
   if (!name || !routers || !routers.length) {
     return null
