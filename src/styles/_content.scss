@@ -39,6 +39,25 @@
         box-shadow: -3px 0 15px 3px rgba(0, 0, 0, .1);
         z-index: 10;
       }
+      .tags-btn-box-left,.tags-btn-box-right {
+        background: #f6f6f6;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        text-align: center;
+        padding: 8px 10px;
+        z-index: 1;
+        .ivu-btn {
+          background: white;
+          padding: 5px 4px;
+        }
+      }
+      .tags-btn-box-left {
+        left: 0;
+      }
+      .tags-btn-box-right {
+        right: 110px;
+      }
     }
   }
   .content {

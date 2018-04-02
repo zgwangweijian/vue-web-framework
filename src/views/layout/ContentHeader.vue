@@ -13,6 +13,11 @@
           </DropdownMenu>
         </Dropdown>
       </div>
+      <div class="tags-btn-box-left">
+        <i-button type="ghost" class="tabbar-btn-left" @click="handleclick('left')">
+          <Icon type="chevron-left"></Icon>
+        </i-button>
+      </div>
       <div ref="scrollBody" class="tags-inner-scroll-body" :style="{left: tagBodyLeft + 'px'}">
         <transition-group name="taglist-moving-animation">
           <Tag
@@ -28,6 +33,11 @@
           >{{ itemTitle(item) }}</Tag>
         </transition-group>
       </div>
+      <div class="tags-btn-box-right">
+        <i-button type="ghost" class="tabbar-btn-right" @click="handleclick('right')">
+          <Icon type="chevron-right"></Icon>
+        </i-button>
+      </div>
     </div>
   </section>
 </template>
@@ -38,7 +48,7 @@ export default {
   data () {
     return {
       currentPageName: this.$route.name,
-      tagBodyLeft: 0,
+      tagBodyLeft: 26,
       refsTag: [],
       tagsCount: 1
     }
@@ -85,7 +95,7 @@ export default {
         }
       } else {
         let tagWidth = event.target.parentNode.offsetWidth
-        this.tagBodyLeft = Math.min(this.tagBodyLeft + tagWidth, 0)
+        this.tagBodyLeft = Math.min(this.tagBodyLeft + tagWidth, 26)
       }
       this.$store.commit('removeTag', name)
       this.$store.commit('closePage', name)
@@ -108,24 +118,33 @@ export default {
         this.$router.push(routerObj)
       }
     },
+    handleclick (type) {
+      if (type === 'left') {
+        if (this.$refs.scrollCon.offsetWidth - 182 < this.$refs.scrollBody.offsetWidth) {
+          this.tagBodyLeft = Math.max(this.tagBodyLeft - 120, this.$refs.scrollCon.offsetWidth - this.$refs.scrollBody.offsetWidth - 135)
+        }
+      } else {
+        this.tagBodyLeft = Math.min(26, this.tagBodyLeft + 120)
+      }
+    },
     handlescroll (e) {
       var type = e.type
       let delta = 0
       if (type === 'DOMMouseScroll' || type === 'mousewheel') {
         delta = (e.wheelDelta) ? e.wheelDelta : -(e.detail || 0) * 40
       }
-      let left = 0
+      let left = 26
       if (delta > 0) {
-        left = Math.min(0, this.tagBodyLeft + delta)
+        left = Math.min(26, this.tagBodyLeft + delta)
       } else {
-        if (this.$refs.scrollCon.offsetWidth - 100 < this.$refs.scrollBody.offsetWidth) {
-          if (this.tagBodyLeft < -(this.$refs.scrollBody.offsetWidth - this.$refs.scrollCon.offsetWidth + 100)) {
+        if (this.$refs.scrollCon.offsetWidth - 135 < this.$refs.scrollBody.offsetWidth) {
+          if (this.tagBodyLeft < -(this.$refs.scrollBody.offsetWidth - this.$refs.scrollCon.offsetWidth + 135)) {
             left = this.tagBodyLeft
           } else {
-            left = Math.max(this.tagBodyLeft + delta, this.$refs.scrollCon.offsetWidth - this.$refs.scrollBody.offsetWidth - 100)
+            left = Math.max(this.tagBodyLeft + delta, this.$refs.scrollCon.offsetWidth - this.$refs.scrollBody.offsetWidth - 135)
           }
         } else {
-          this.tagBodyLeft = 0
+          this.tagBodyLeft = 26
         }
       }
       this.tagBodyLeft = left
@@ -139,18 +158,18 @@ export default {
       } else {
         this.$store.commit('clearOtherTags', this)
       }
-      this.tagBodyLeft = 0
+      this.tagBodyLeft = 26
     },
     moveToView (tag) {
       if (tag.offsetLeft < -this.tagBodyLeft) {
         // 标签在可视区域左侧
         this.tagBodyLeft = -tag.offsetLeft + 10
-      } else if (tag.offsetLeft + 10 > -this.tagBodyLeft && tag.offsetLeft + tag.offsetWidth < -this.tagBodyLeft + this.$refs.scrollCon.offsetWidth - 100) {
+      } else if (tag.offsetLeft + 10 > -this.tagBodyLeft && tag.offsetLeft + tag.offsetWidth < -this.tagBodyLeft + this.$refs.scrollCon.offsetWidth - 135) {
         // 标签在可视区域
-        this.tagBodyLeft = Math.min(0, this.$refs.scrollCon.offsetWidth - 100 - tag.offsetWidth - tag.offsetLeft - 20)
+        this.tagBodyLeft = Math.min(26, this.$refs.scrollCon.offsetWidth - 135 - tag.offsetWidth - tag.offsetLeft - 14)
       } else {
         // 标签在可视区域右侧
-        this.tagBodyLeft = -(tag.offsetLeft - (this.$refs.scrollCon.offsetWidth - 100 - tag.offsetWidth) + 20)
+        this.tagBodyLeft = -(tag.offsetLeft - (this.$refs.scrollCon.offsetWidth - 135 - tag.offsetWidth) + 14)
       }
     }
   },
