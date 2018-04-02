@@ -1,4 +1,5 @@
 import Content from '@/views/Content.vue'
+import { dynamicRouter } from './dynamicRouter'
 
 // 不作为Main组件的子页面展示的页面单独写，如下
 export const loginRouter = {
@@ -62,31 +63,24 @@ export const otherRouter = {
 }
 
 // 作为Main组件的子页面展示并且在左侧菜单显示的路由写在appRouter里
-export const appRouter = [
-  {
-    path: '/group',
-    icon: 'ios-folder',
-    name: 'group',
-    title: 'Group',
-    component: Content,
-    children: [
-      {
-        path: 'page1',
-        icon: 'ios-paper-outline',
-        name: 'page1',
-        title: 'Page1',
-        component: resolve => { require(['@/views/group/page1/page1.vue'], resolve) }
-      },
-      {
-        path: 'page2',
-        icon: 'ios-list-outline',
-        name: 'page2',
-        title: 'Page2',
-        component: resolve => { require(['@/views/group/page2/page2.vue'], resolve) }
+export const appRouter = []
+
+function buildRouters (item) {
+  item.forEach(function (item) {
+    if (item.type === 'app') {
+      appRouter.push(item)
+      if (item.actions && item.actions.length) {
+        item.actions.forEach(function (subItem) {
+          otherRouter.children.push(subItem)
+        })
       }
-    ]
-  }
-]
+    } else {
+      otherRouter.children.push(item)
+    }
+  })
+}
+
+buildRouters(dynamicRouter)
 
 // 所有上面定义的路由都要写在下面的routers里
 export const routers = [
