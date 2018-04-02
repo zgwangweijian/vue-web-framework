@@ -2,7 +2,7 @@
   <div class="wrapper">
     <app-header></app-header>
 
-    <app-sidebar></app-sidebar>
+    <app-sidebar :menu-list="menuList"></app-sidebar>
 
     <div class="content-wrapper">
       <app-content-header :pageTagsList="pageTagsList"></app-content-header>
