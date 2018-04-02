@@ -30,6 +30,15 @@ export default {
     'app-content-header': ContentHeader
   },
   computed: {
+    menuList () {
+      return this.$store.state.app.menuList
+    },
+    currentPath () {
+      return this.$store.state.app.currentPath
+    },
+    cachePage () {
+      return this.$store.state.app.cachePage
+    },
     pageTagsList () {
       return this.$store.state.app.pageOpenedList // 打开的页面的页面对象
     }
