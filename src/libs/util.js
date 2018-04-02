@@ -1,21 +1,8 @@
-import axios from 'axios'
-
 let util = {}
 util.title = function (title) {
   title = title || window.document.title
   window.document.title = title
 }
-
-const ajaxUrl = process.env.NODE_ENV === 'development'
-  ? ''
-  : process.env.NODE_ENV === 'production'
-    ? ''
-    : ''
-
-util.ajax = axios.create({
-  baseURL: ajaxUrl,
-  timeout: 30000
-})
 
 util.getRouterObjByName = function (routers, name) {
   if (!name || !routers || !routers.length) {
