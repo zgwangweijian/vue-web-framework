@@ -48,19 +48,6 @@ const app = {
     updateMenulist (state) {
       state.menuList = appRouter
     },
-    addOpenSubmenu (state, name) {
-      let hasThisName = false
-      let isEmpty = false
-      if (name.length === 0) {
-        isEmpty = true
-      }
-      if (state.openedSubmenuArr.indexOf(name) > -1) {
-        hasThisName = true
-      }
-      if (!hasThisName && !isEmpty) {
-        state.openedSubmenuArr.push(name)
-      }
-    },
     closePage (state, name) {
       state.cachePage.forEach((item, index) => {
         if (item === name) {
@@ -124,15 +111,6 @@ const app = {
     },
     setCurrentPageName (state, name) {
       state.currentPageName = name
-    },
-    setAvator (state, path) {
-      localStorage.avatorImgPath = path
-    },
-    clearOpenedSubmenu (state) {
-      state.openedSubmenuArr.length = 0
-    },
-    setMessageCount (state, count) {
-      state.messageCount = count
     },
     increateTag (state, tagObj) {
       if (!Util.oneOf(tagObj.name, state.dontCache)) {
