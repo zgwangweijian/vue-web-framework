@@ -26,48 +26,24 @@
           <img src="./../../assets/img/avatar-bg.png" alt="User Image" class="bg-user">
         </div>
         <ul class="sidebar-menu" data-widget="tree">
-          <li class="treeview">
-            <a href="#">
-              <i class="fas fa-table"></i>
-              <span>示例</span>
+          <li v-for="(item,index) in menuList" :key="index" class="treeview">
+            <router-link v-if="!item.children.length" :to="item.path">
+              <i :class="[item.icon]"></i>
+              <span>{{ item.name }}</span>
+              <span class="pull-right-container"></span>
+            </router-link>
+            <a v-if="item.children.length" href="#">
+              <i :class="[item.icon]"></i>
+              <span>{{ item.name }}</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
-            </span>
+              </span>
             </a>
-            <ul class="treeview-menu">
-              <li>
-                <router-link to="/group/page1">
-                  <i class="fas fa-table"></i>
-                  页面1
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/group/page2">
-                  <i class="fas fa-table"></i>
-                  页面2
-                </router-link>
-              </li>
-            </ul>
-          </li>
-          <li class="treeview">
-            <a href="#">
-              <i class="fas fa-table"></i>
-              <span>表格示例</span>
-              <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-            </span>
-            </a>
-            <ul class="treeview-menu">
-              <li>
-                <router-link to="/home">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  基础表格
-                </router-link>
-              </li>
-              <li>
-                <router-link to="/table/hard">
-                  <!--<avatar username="Blank Page" :size='20' color="#fff"></avatar>-->
-                  分页表格
+            <ul v-if="item.children.length" class="treeview-menu">
+              <li v-for="(subItem, subIndex) in item.children" :key="item.name + subIndex">
+                <router-link :to="item.path + '/' + subItem.path">
+                  <i :class="[subItem.icon]"></i>
+                  <span>{{ subItem.name }}</span>
                 </router-link>
               </li>
             </ul>
@@ -83,6 +59,12 @@ import $ from 'jquery'
 
 export default {
   name: 'ContentSidebar',
+  props: {
+    menuList: {
+      type: Array,
+      required: true
+    }
+  },
   created: function () {
     $(document).ready(function ($) {
       $("[data-widget='tree']").each(function () {
@@ -92,12 +74,12 @@ export default {
   },
   mounted: function () {
     $(document).ready(function ($) {
-      $('.main-sidebar > div').slimScroll({
+      /* $('.main-sidebar > div').slimScroll({
         width: '230px',
         position: 'left',
         size: '5px',
         height: '95vh'
-      })
+      }) */
     })
   }
 }
